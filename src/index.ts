@@ -9,7 +9,7 @@ const detectors = [
     detectShopify,
 ]
 
-const detect = (har: HAR, options?: Options) => {
+export const detect = (har: HAR, options?: Options) => {
     const opt: Options = {
         asap: true,
         foundOnly: true,
@@ -21,5 +21,3 @@ const detect = (har: HAR, options?: Options) => {
         res = res.filter(d => d.detected)
     }
 }
-
-export default detect
