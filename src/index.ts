@@ -20,4 +20,6 @@ export const detect = (har: HAR, options?: Options) => {
     if (opt.foundOnly) {
         res = res.filter(d => d.detected)
     }
+
+    return res
 }

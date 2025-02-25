@@ -3,7 +3,12 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.0.1] - 2025-02-25
+## [1.0.3] - 2025-02-25
+
+### Fixed
+- Brought back return in main func
+
+## [1.0.2] - 2025-02-25
 
 ### Removed
 - Removed default export
