@@ -1,15 +1,13 @@
-import { DetectorResult, getRootHeaders, HAR } from "../../common/index.js"
+import { DetectorResult, HAR, rootHeaderContains, rootHeaderEquals } from "../../common/index.js"
 
 const detectShopify = (har: HAR, asap = true) => {
     const res: DetectorResult = {
         detected: false,
+        name: 'Shopify',
         reasons: [],
     }
-    const rootHeaders = getRootHeaders(har)
 
-    const hasPreloadCdnHeader = rootHeaders?.filter(h => h.name.toLowerCase() === 'link').pop()?.value.toLowerCase().indexOf('https://cdn.shopify.com') !== -1
-
-    if (hasPreloadCdnHeader) {
+    if (rootHeaderContains(har, 'link', 'https://cdn.shopify.com')) {
         res.detected = true
         res.reasons.push('has preload header')
         if (asap) {
@@ -17,9 +15,7 @@ const detectShopify = (har: HAR, asap = true) => {
         }
     }
 
-    const hasPoweredByHeader = rootHeaders?.filter(h => h.name.toLowerCase() === 'powered-by').pop()?.value.toLowerCase().indexOf('shopify') !== -1
-
-    if (hasPoweredByHeader) {
+    if (rootHeaderEquals(har, 'powered-by', 'shopify')) {
         res.detected = true
         res.reasons.push('has powered-by header')
         if (asap) {

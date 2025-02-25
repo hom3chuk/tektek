@@ -9,8 +9,8 @@ export const getRoot = (har: HAR): Entry | null => {
     return res
 }
 
-export const getRootBody = (har: HAR): String | null => {
-    let res: String | null = null
+export const getRootBody = (har: HAR): string | null => {
+    let res: string | null = null
     const root = getRoot(har)
     if (root) {
         res = root.response.content.text
@@ -19,7 +19,7 @@ export const getRootBody = (har: HAR): String | null => {
 }
 
 export const getRootHeaders = (har: HAR): NameValue[] | null => {
-    let res: NameValue[] | null  = null
+    let res: NameValue[] | null = null
     const root = getRoot(har)
     if (root) {
         res = root.response.headers
@@ -27,91 +27,135 @@ export const getRootHeaders = (har: HAR): NameValue[] | null => {
     return res
 }
 
+export const rootHeaderEquals = (har: HAR, header: string, value: string): boolean => {
+    let res: boolean = false
+    const rootHeaders = getRootHeaders(har)
+    for (let i = 0; i < rootHeaders.length; i++) {
+        if (rootHeaders[i].name.toLowerCase() === header.toLowerCase() && rootHeaders[i].value.toLowerCase() === value.toLowerCase()) {
+            return true
+        }
+    }
+    return res
+}
+
+export const anyHeaderEquals = (har: HAR, header: string, value: string): boolean => {
+    let res: boolean = false
+    for (let i = 0; i < har.log.entries.length; i++) {
+        const currentHeaders = har.log.entries[i].response.headers
+        for (let j = 0; j < currentHeaders.length; j++) {
+            if (currentHeaders[j].name.toLowerCase() === header.toLowerCase() && currentHeaders[j].value.toLowerCase() === value.toLowerCase()) {
+                return true
+            }
+        }
+    }
+    return res
+}
+
+export const rootHeaderContains = (har: HAR, header: string, value: string): boolean => {
+    let res: boolean = false
+    const rootHeaders = getRootHeaders(har)
+    for (let i = 0; i < rootHeaders.length; i++) {
+        if (
+            (rootHeaders[i].name.toLowerCase() === header.toLowerCase())
+            && (rootHeaders[i].value.toLowerCase().indexOf(value.toLowerCase()) !== -1)) {
+            return true
+        }
+    }
+    return res
+}
+
 type NameValue = {
-    name: String,
-    value: String,
+    name: string,
+    value: string,
 }
 
 type Request = {
-    method: String,
-    url: String,
-    httpVersion: String,
+    method: string,
+    url: string,
+    httpVersion: string,
     cookies: NameValue[],
     headers: NameValue[],
-    queryString: NameValue[],
-    headersSize: Number,
-    bodySize: Number,
+    queryString: NameValue[] | [],
+    headersSize: number,
+    bodySize: number,
 }
 
 type Content = {
-    size: Number,
-    mimeType: String,
-    text: String,
+    size: number,
+    mimeType: string,
+    text: string,
 }
 
 type Response = {
-    status: Number,
-    statusText: String,
-    httpVersion: String,
+    status: number,
+    statusText: string,
+    httpVersion: string,
     cookies: NameValue[],
     headers: NameValue[],
-    redirectURL: String,
-    headersSize: Number,
-    bodySize: Number,
-    _transferSize: Number,
+    redirectURL: string,
+    headersSize: number,
+    bodySize: number,
+    _transferSize?: number,
     content: Content,
 }
 
 type Creator = {
-    name: String,
-    version: String,
-    comment: String,
+    name: string,
+    version: string,
+    comment?: string,
 }
 
 type PageTimings = {
-    onContentLoad: Number,
-    onLoad: Number,
+    onContentLoad: number,
+    onLoad: number,
 }
 
 type Page = {
-    id: String,
-    title: String,
-    startedDateTime: String,
+    id: string,
+    title: string,
+    startedDateTime: string,
     pageTimings: PageTimings,
 }
 
 type EntryTimings = {
-    blocked: Number,
-    dns: Number,
-    connect: Number,
-    send: Number,
-    wait: Number,
-    receive: Number,
-    ssl: Number,
+    blocked: number,
+    dns: number,
+    connect: number,
+    send: number,
+    wait: number,
+    receive: number,
+    ssl: number,
 }
 
 type Initiator = {
-    type: String,
+    type: string,
 }
 
 type Entry = {
-    pageref: String,
-    startedDateTime: String,
-    time: Number,
+    pageref: string,
+    startedDateTime: string,
+    time: number,
     request: Request,
     response: Response,
     cache: {},
-    _fromDiskCache: false,
+    _fromDiskCache?: false,
     timings: EntryTimings,
-    serverIPAddress: String,
-    connection: String,
-    _initiator: Initiator,
-    _priority: String,
-    _resourceType: String
+    _securityState?: string,
+    serverIPAddress: string,
+    connection: string,
+    _initiator?: Initiator,
+    _priority?: string,
+    _resourceType?: string
+}
+
+type Browser = {
+    name: string,
+    version: string,
 }
 
 type Log = {
-    version: String,
+    version: string,
+    browser?: Browser,
     creator: Creator,
     pages: Page[],
     entries: Entry[],
@@ -121,8 +165,14 @@ export type HAR = {
     log: Log
 }
 
+export type Options = {
+    asap?: boolean,
+    foundOnly?: boolean,
+}
+
 export type DetectorResult = {
-    detected: Boolean,
-    reasons: String[],
-    version?: String,
+    detected: boolean,
+    name: string,
+    reasons: string[],
+    version?: string,
 }

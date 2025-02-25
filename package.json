@@ -21,6 +21,7 @@
   ],
   "author": "Eugene Chekan <hom3chuk@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/hom3chuk/tektek/issues"
   },
