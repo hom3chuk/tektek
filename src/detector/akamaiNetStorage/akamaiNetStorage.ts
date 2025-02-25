@@ -1,4 +1,4 @@
-import { anyHeaderEquals, DetectorResult, getRootHeaders, HAR, rootHeaderContains } from "../../common/index.js"
+import { anyHeaderEquals, DetectorResult, HAR } from "../../common/index.js"
 
 const detectAkamaiNetSttorage = (har: HAR, asap = true) => {
     const res: DetectorResult = {

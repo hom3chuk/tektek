@@ -1,4 +1,4 @@
-import { DetectorResult, getRootHeaders, HAR, rootHeaderContains } from "../../common/index.js"
+import { DetectorResult, HAR, rootHeaderContains } from "../../common/index.js"
 
 const detectNginx = (har: HAR, asap = true) => {
     const res: DetectorResult = {
