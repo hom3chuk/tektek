@@ -1,6 +1,6 @@
 import { anyHeaderEquals, DetectorResult, HAR } from "../../common/index.js"
 
-const detectAkamaiNetSttorage = (har: HAR, asap = true) => {
+const detectAkamaiNetStorage = (har: HAR, asap = true) => {
     const res: DetectorResult = {
         detected: false,
         name: 'Akamai Net Storage',
@@ -18,4 +18,4 @@ const detectAkamaiNetSttorage = (har: HAR, asap = true) => {
     return res
 }
 
-export default detectAkamaiNetSttorage
+export default detectAkamaiNetStorage
