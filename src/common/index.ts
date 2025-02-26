@@ -2,7 +2,7 @@ export const getRoot = (har: HAR): Entry | null => {
     const res = null
     const entries = har.log.entries
     for (let i = 0; i < entries.length; i++) {
-        if (entries[i].response.status === 200 && entries[i].response.content.mimeType === 'text/html') {
+        if ((entries[i].response.status === 200 || entries[i].response.status === 304) && entries[i].response.content.mimeType === 'text/html') {
             return entries[i]
         }
     }
@@ -62,6 +62,22 @@ export const anyResourceHeaderContains = (har: HAR, header: string, value: strin
             ) {
                 return true
             }
+        }
+    }
+    return res
+}
+
+export const anyJavascriptResourceContentContains = (har: HAR, value: string, searchLimit: number | undefined = undefined): boolean => {
+    let res: boolean = false
+    for (let i = 0; i < har.log.entries.length; i++) {
+        if (har.log.entries[i].response.content.mimeType.toLowerCase() !== 'text/javascript') {
+            continue
+        }
+        if (
+            (searchLimit && har.log.entries[i].response.content.text.substring(0, searchLimit).indexOf(value) !== -1)
+            || (!searchLimit && har.log.entries[i].response.content.text.indexOf(value) !== -1)
+        ) {
+            return true
         }
     }
     return res
@@ -221,6 +237,7 @@ type Entry = {
     _initiator?: Initiator,
     _priority?: string,
     _resourceType?: string
+    _connectionId?: string,
 }
 
 type Browser = {

@@ -21,7 +21,8 @@ import detectDigitalproserver from './detector/digitalproserver/digitalproserver
 import detectDrupal from './detector/drupal/drupal.js'
 import detectEngintron from './detector/engintron/engingtron.js'
 import detectFastly from './detector/fastly/fastly.js'
-import detectGoogleCloudPlatform from './detector/googleCloudPlatform/googleCloudPlatform.js'
+import detectGoogleAnalytics from './detector/googleAnalytics/googleAnalytics.js'
+import detectGoogleComputeEngine from './detector/googleComputeEngine/googleComputeEngine.js'
 import detectGoogleTagManager from './detector/googleTagManager/googleTagManager.js'
 import detectGunicorn from './detector/gunicorn/gunicorn.js'
 import detectH2O from './detector/H2O/H2O.js'
@@ -31,6 +32,7 @@ import detectHeroku from './detector/heroku/heroku.js'
 import detectHostinger from './detector/hostinger/hostinger.js'
 import detectHostingerHPanel from './detector/hostingerHPanel/hostingerHPanel.js'
 import detectJetty from './detector/jetty/jetty.js'
+import detectJQuery from './detector/jquery/jquery.js'
 import detectLighttpd from './detector/lighttpd/lighttpd.js'
 import detectLiteSpeed from './detector/liteSpeed/liteSpeed.js'
 import detectMerlinCDN from './detector/merlinCDN/merlinCDN.js'
@@ -79,7 +81,8 @@ const detectors = [
     detectDrupal,
     detectFastly,
     detectEngintron,
-    detectGoogleCloudPlatform,
+    detectGoogleAnalytics,
+    detectGoogleComputeEngine,
     detectGoogleTagManager,
     detectGunicorn,
     detectH2O,
@@ -89,6 +92,7 @@ const detectors = [
     detectHostinger,
     detectHostingerHPanel,
     detectJetty,
+    detectJQuery,
     detectLighttpd,
     detectLiteSpeed,
     detectMerlinCDN,

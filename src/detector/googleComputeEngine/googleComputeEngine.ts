@@ -1,9 +1,9 @@
 import { anyResourceHeaderContains, DetectorResult, HAR } from "../../common/index.js"
 
-const detectGoogleCloudPlatform = (har: HAR, asap = true) => {
+const detectGoogleComputeEngine = (har: HAR, asap = true) => {
     const res: DetectorResult = {
         detected: false,
-        name: 'Google Cloud Platform',
+        name: 'Google Compute Engine',
         reasons: [],
     }
 
@@ -18,4 +18,4 @@ const detectGoogleCloudPlatform = (har: HAR, asap = true) => {
     return res
 }
 
-export default detectGoogleCloudPlatform
+export default detectGoogleComputeEngine
