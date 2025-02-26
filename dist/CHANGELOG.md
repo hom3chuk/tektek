@@ -3,6 +3,11 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.5] - 2025-02-26
+
+### Added
+- Added a lot of new detectors
+
 ## [1.0.4] - 2025-02-25
 
 ### Added

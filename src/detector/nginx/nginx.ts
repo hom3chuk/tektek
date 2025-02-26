@@ -7,9 +7,9 @@ const detectNginx = (har: HAR, asap = true) => {
         reasons: [],
     }
 
-    if (rootHeaderContains(har, 'server', 'php')) {
+    if (rootHeaderContains(har, 'server', 'nginx')) {
         res.detected = true
-        res.reasons.push('has server header')
+        res.reasons.push('server header mentions nginx')
         if (asap) {
             return res
         }

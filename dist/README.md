@@ -1,6 +1,10 @@
 # tektek
 A library for detecting technologies used within HTTP Archive (HAR)
 
+## List of tracked technologies
+
+Abyss, AWS CloudFront, AWS ELB, AWS S3 Server, Apache Web Server, APISIX, Azure, Baidu WAF, BaseHTTP, Bitrix, Bunny CDN, Caddy, Canny, CherryPy, Cloudflare, Cloudflare Server, Cloudinary, Digitalproserver, Drupal, Engintron, Fastly, Google Cloud Platform, Google Tag Manager, gunicorn, H2O, HAProxy, Haravan, Heroku, Hostinger, Hostinger hPanel, Jetty, lighttpd, LiteSpeed, Merlin CDN, Microsoft IIS, Namecheap nginx, NaviServer, Next.js, Nginx, OpenCMS, OpenResty, Pagely, PHP, Plesk, Resin, Ruby, Shopify, ServiceNow ADC, Tornado, Twisted Web, Vercel, Virtuoso Universal Server, Webflow, WEBrick, WordPress, WP Engine, Zope
+
 ## Installation
 
 ### npm

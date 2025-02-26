@@ -1,4 +1,4 @@
-import { anyResourceAnyHeadersContains, anyResourceHeaderEquals, DetectorResult, HAR, rootHeaderContains, rootHeaderEquals } from "../../common/index.js"
+import { anyResourceAnyHeadersContain, anyResourceHeaderEquals, DetectorResult, HAR, rootHeaderContains, rootHeaderEquals } from "../../common/index.js"
 
 const detectExample = (har: HAR, asap = true) => {
     const res: DetectorResult = {
@@ -17,7 +17,7 @@ const detectExample = (har: HAR, asap = true) => {
     }
 
     // detects if ANY resource on the page mentions Heroku
-    if (anyResourceAnyHeadersContains(har, 'heroku')) {
+    if (anyResourceAnyHeadersContain(har, 'heroku')) {
         res.detected = true
         res.reasons.push('header mentions heroku')
         if (asap) {

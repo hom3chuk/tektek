@@ -1,4 +1,4 @@
-import { anyResourceHeaderEquals, DetectorResult, HAR } from "../../common/index.js"
+import { anyResourceHeaderContains, DetectorResult, HAR } from "../../common/index.js"
 
 const detectAkamaiNetStorage = (har: HAR, asap = true) => {
     const res: DetectorResult = {
@@ -7,9 +7,9 @@ const detectAkamaiNetStorage = (har: HAR, asap = true) => {
         reasons: [],
     }
 
-    if (anyResourceHeaderEquals(har, 'server', 'AkamaiNetStorage')) {
+    if (anyResourceHeaderContains(har, 'server', 'AkamaiNetStorage')) {
         res.detected = true
-        res.reasons.push('has server header')
+        res.reasons.push('a resource has AkamaiNetStorage server header')
         if (asap) {
             return res
         }

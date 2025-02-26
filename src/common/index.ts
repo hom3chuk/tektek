@@ -51,20 +51,82 @@ export const anyResourceHeaderEquals = (har: HAR, header: string, value: string)
     return res
 }
 
-export const rootHeaderContains = (har: HAR, header: string, value: string): boolean => {
+export const anyResourceHeaderContains = (har: HAR, header: string, value: string): boolean => {
     let res: boolean = false
-    const rootHeaders = getRootHeaders(har)
-    for (let i = 0; i < rootHeaders.length; i++) {
-        if (
-            (rootHeaders[i].name.toLowerCase() === header.toLowerCase())
-            && (rootHeaders[i].value.toLowerCase().indexOf(value.toLowerCase()) !== -1)) {
+    for (let i = 0; i < har.log.entries.length; i++) {
+        const currentHeaders = har.log.entries[i].response.headers
+        for (let j = 0; j < currentHeaders.length; j++) {
+            if (
+                (currentHeaders[j].name.toLowerCase() === header.toLowerCase())
+                && (currentHeaders[j].value.toLowerCase().indexOf(value.toLowerCase()) !== -1)
+            ) {
+                return true
+            }
+        }
+    }
+    return res
+}
+
+export const anyResourceUrlContains = (har: HAR, value: string): boolean => {
+    let res: boolean = false
+    for (let i = 0; i < har.log.entries.length; i++) {
+        if (har.log.entries[i].request.url.toLowerCase().indexOf(value.toLowerCase()) !== -1) {
             return true
         }
     }
     return res
 }
 
-export const anyResourceAnyHeadersContains = (har: HAR, value: string): boolean => {
+export const rootHeaderContains = (har: HAR, header: string, value: string): boolean => {
+    let res: boolean = false
+    const rootHeaders = getRootHeaders(har)
+    for (let i = 0; i < rootHeaders.length; i++) {
+        if (
+            (rootHeaders[i].name.toLowerCase() === header.toLowerCase())
+            && (rootHeaders[i].value.toLowerCase().indexOf(value.toLowerCase()) !== -1)
+        ) {
+            return true
+        }
+    }
+    return res
+}
+
+export const rootAnyHeaderContains = (har: HAR, value: string): boolean => {
+    let res: boolean = false
+    const rootHeaders = getRootHeaders(har)
+    for (let i = 0; i < rootHeaders.length; i++) {
+        if (rootHeaders[i].value.toLowerCase().indexOf(value.toLowerCase()) !== -1) {
+            return true
+        }
+    }
+    return res
+}
+
+export const rootHeaderExists = (har: HAR, header: string): boolean => {
+    let res: boolean = false
+    const rootHeaders = getRootHeaders(har)
+    for (let i = 0; i < rootHeaders.length; i++) {
+        if (rootHeaders[i].name.toLowerCase() === header.toLowerCase()) {
+            return true
+        }
+    }
+    return res
+}
+
+export const anyResourceHeaderExists = (har: HAR, header: string): boolean => {
+    let res: boolean = false
+    for (let i = 0; i < har.log.entries.length; i++) {
+        const currentHeaders = har.log.entries[i].response.headers
+        for (let j = 0; j < currentHeaders.length; j++) {
+            if (currentHeaders[j].name.toLowerCase() === header.toLowerCase()) {
+                return true
+            }
+        }
+    }
+    return res
+}
+
+export const anyResourceAnyHeadersContain = (har: HAR, value: string): boolean => {
     let res: boolean = false
     for (let i = 0; i < har.log.entries.length; i++) {
         const currentHeaders = har.log.entries[i].response.headers
