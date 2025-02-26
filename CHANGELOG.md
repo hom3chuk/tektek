@@ -3,6 +3,16 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.8] - 2025-02-26
+
+### Added
+- Added Parsely and Parsely WP plugin, AWS Lambda, Google ReCAPTCHA
+
+## [1.0.7] - 2025-02-26
+
+### Added
+- Readme updates
+
 ## [1.0.6] - 2025-02-26
 
 ### Added
