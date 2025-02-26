@@ -37,7 +37,7 @@ const detectExample = (har: HAR, asap = true) => {
     // detects if ROOT (ie the html page itself) is served with Apache
     if (rootHeaderContains(har, 'server', 'apache')) {
         res.detected = true
-        res.reasons.push('header mentions heroku')
+        res.reasons.push('header mentions apache')
         if (asap) {
             return res
         }
