@@ -38,7 +38,7 @@ export const rootHeaderEquals = (har: HAR, header: string, value: string): boole
     return res
 }
 
-export const anyHeaderEquals = (har: HAR, header: string, value: string): boolean => {
+export const anyResourceHeaderEquals = (har: HAR, header: string, value: string): boolean => {
     let res: boolean = false
     for (let i = 0; i < har.log.entries.length; i++) {
         const currentHeaders = har.log.entries[i].response.headers
@@ -59,6 +59,19 @@ export const rootHeaderContains = (har: HAR, header: string, value: string): boo
             (rootHeaders[i].name.toLowerCase() === header.toLowerCase())
             && (rootHeaders[i].value.toLowerCase().indexOf(value.toLowerCase()) !== -1)) {
             return true
+        }
+    }
+    return res
+}
+
+export const anyResourceAnyHeadersContains = (har: HAR, value: string): boolean => {
+    let res: boolean = false
+    for (let i = 0; i < har.log.entries.length; i++) {
+        const currentHeaders = har.log.entries[i].response.headers
+        for (let j = 0; j < currentHeaders.length; j++) {
+            if (currentHeaders[j].value.toLowerCase().indexOf(value.toLowerCase()) !== -1) {
+                return true
+            }
         }
     }
     return res
