@@ -3,6 +3,11 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.9] - 2025-02-27
+
+### Added
+- Added React
+
 ## [1.0.8] - 2025-02-26
 
 ### Added

@@ -49,6 +49,7 @@ import detectPagely from './detector/pagely/pagely.js'
 import detectParsely from './detector/parsely/parsely.js'
 import detectPHP from './detector/php/php.js'
 import detectPlesk from './detector/plesk/plesk.js'
+import detectReact from './detector/react/react.js'
 import detectResin from './detector/resin/resin.js'
 import detectRuby from './detector/ruby/ruby.js'
 import detectServiceNowADC from './detector/serviceNowADC/serviceNowADC.js'
@@ -113,6 +114,7 @@ const detectors = [
     detectParsely,
     detectPHP,
     detectPlesk,
+    detectReact,
     detectResin,
     detectRuby,
     detectServiceNowADC,
