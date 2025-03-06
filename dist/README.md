@@ -3,7 +3,7 @@ A library for detecting technologies used within HTTP Archive (HAR)
 
 ## List of tracked technologies
 
-Abyss, AWS CloudFront, AWS ELB, AWS Lambda, AWS S3 Server, Apache Web Server, APISIX, Azure, Baidu WAF, BaseHTTP, Bitrix, Bunny CDN, Caddy, Canny, CherryPy, Cloudflare, Cloudflare Server, Cloudinary, Digitalproserver, Drupal, Engintron, Fastly, Google Analytics, Google Compute Engine, Google ReCAPTCHA, Google Tag Manager, gunicorn, H2O, HAProxy, Haravan, Heroku, Hostinger, Hostinger hPanel, Jetty, jQuery, lighttpd, LiteSpeed, Merlin CDN, Microsoft IIS, Namecheap nginx, NaviServer, Next.js, Nginx, OpenCMS, OpenResty, Pagely, Parsely, Parsely WP plugin, PHP, Plesk, React, Resin, Ruby, Shopify, ServiceNow ADC, Tornado, Twisted Web, Vercel, Virtuoso Universal Server, Webflow, WEBrick, WordPress, WP Engine, Zope
+Abyss, Adobe Fonts, Apache Web Server, APISIX, AWS CloudFront, AWS ELB, AWS Lambda, AWS S3 Server, Axeptio, Azure, Baidu WAF, BaseHTTP, Bitrix, Bunny CDN, Caddy, Canny, CherryPy, Cloudflare, Cloudflare Server, Cloudinary, Digitalproserver, Drupal, Engintron, Facebook SDK, Fastly, FoxyCart, Google Ads, Google Analytics, Google Compute Engine, Google Fonts, Google ReCAPTCHA, Google Tag Manager, gunicorn, H2O, HAProxy, Haravan, Heroku, Hostinger, Hostinger hPanel, Jetty, Joomla!, jQuery, lighttpd, LiteSpeed, Matomo, Merlin CDN, Microsoft IIS, Namecheap nginx, NaviServer, Next.js, Nginx, OpenCMS, OpenResty, Pagely, Parsely, Parsely WP plugin, PHP, Plesk, Prismic, Protecht, React, Resin, Ruby, Sentry.io, ServiceNow ADC, Shopify, Spektrix, Stripe, Swiper JS, Taboola, Tornado, Trustpilot, Twisted Web, Vercel, Virtuoso Universal Server, Webflow, Webpack, WEBrick, WordPress, WP Engine, Zope
 
 ## Installation
 

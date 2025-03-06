@@ -1,5 +1,6 @@
 import { HAR, Options } from './common/index.js'
 import detectAbyss from './detector/abyss/abyss.js'
+import detectAdobeFonts from './detector/adobeFonts/adobeFonts.js'
 import detectAkamaiNetStorage from './detector/akamaiNetStorage/akamaiNetStorage.js'
 import detectApache from './detector/apache/apache.js'
 import detectAPISIX from './detector/APISIX/APISIX.js'
@@ -7,6 +8,7 @@ import detectAWSCloudFront from './detector/AWSCloudFront/AWSCloudFront.js'
 import detectAWSELB from './detector/AWSELB/AWSELB.js'
 import detectAWSLambda from './detector/AWSLambda/AWSLambda.js'
 import detectAWSS3Server from './detector/AWSS3Server/AWSS3Server.js'
+import detectAxeptio from './detector/axeptio/axeptio.js'
 import detectAzure from './detector/azure/azure.js'
 import detectBaiduWAF from './detector/baiduWAF/baiduWAF.js'
 import detectBaseHTTP from './detector/baseHTTP/baseHTTP.js'
@@ -21,9 +23,13 @@ import detectCloudinary from './detector/cloudinary/cloudinary.js'
 import detectDigitalproserver from './detector/digitalproserver/digitalproserver.js'
 import detectDrupal from './detector/drupal/drupal.js'
 import detectEngintron from './detector/engintron/engingtron.js'
+import detectFacebookSDK from './detector/facebookSDK/facebookSDK.js'
 import detectFastly from './detector/fastly/fastly.js'
+import detectFoxyCart from './detector/foxyCart/foxyCart.js'
+import detectGoogleAds from './detector/googleAds/googleAds.js'
 import detectGoogleAnalytics from './detector/googleAnalytics/googleAnalytics.js'
 import detectGoogleComputeEngine from './detector/googleComputeEngine/googleComputeEngine.js'
+import detectGoogleFonts from './detector/googleFonts/googleFonts.js'
 import detectGoogleReCAPTCHA from './detector/googleReCAPTCHA/googleReCAPTCHA.js'
 import detectGoogleTagManager from './detector/googleTagManager/googleTagManager.js'
 import detectGunicorn from './detector/gunicorn/gunicorn.js'
@@ -34,9 +40,11 @@ import detectHeroku from './detector/heroku/heroku.js'
 import detectHostinger from './detector/hostinger/hostinger.js'
 import detectHostingerHPanel from './detector/hostingerHPanel/hostingerHPanel.js'
 import detectJetty from './detector/jetty/jetty.js'
+import detectJoomla from './detector/joomla/joomla.js'
 import detectJQuery from './detector/jquery/jquery.js'
 import detectLighttpd from './detector/lighttpd/lighttpd.js'
 import detectLiteSpeed from './detector/liteSpeed/liteSpeed.js'
+import detectMatomo from './detector/matomo/matomo.js'
 import detectMerlinCDN from './detector/merlinCDN/merlinCDN.js'
 import detectMicrosoftIIS from './detector/microsoftIIS/microsoftIIS.js'
 import detectNamecheapNginx from './detector/namecheapNginx/namecheapNginx.js'
@@ -49,16 +57,25 @@ import detectPagely from './detector/pagely/pagely.js'
 import detectParsely from './detector/parsely/parsely.js'
 import detectPHP from './detector/php/php.js'
 import detectPlesk from './detector/plesk/plesk.js'
+import detectPrismic from './detector/prismic/prismic.js'
+import detectProtecht from './detector/protecht/protecht.js'
 import detectReact from './detector/react/react.js'
 import detectResin from './detector/resin/resin.js'
 import detectRuby from './detector/ruby/ruby.js'
+import detectSentry from './detector/sentry/sentry.js'
 import detectServiceNowADC from './detector/serviceNowADC/serviceNowADC.js'
 import detectShopify from './detector/shopify/shopify.js'
+import detectSpektrix from './detector/spektrix/spektrix.js'
+import detectStripe from './detector/stripe/stripe.js'
+import detectSwiper from './detector/swiperjs/swiperjs.js'
+import detectTaboola from './detector/taboola/taboola.js'
 import detectTornado from './detector/tornado/tornado.js'
+import detectTrustpilot from './detector/trustpilot/trustpilot.js'
 import detectTwistedWeb from './detector/twistedWeb/twistedWeb.js'
 import detectVercel from './detector/vercel/vercel.js'
 import detectVirtuosoUniversalServer from './detector/virtuosoUniversalServer/virtuosoUniversalServer.js'
 import detectWebflow from './detector/webflow/webflow.js'
+import detectWebpack from './detector/webpack/webpack.js'
 import detectWEBrick from './detector/WEBrick/WEBrick.js'
 import detectWordPress from './detector/wordPress/wordPress.js'
 import detectWPEngine from './detector/WPEngine/WPEngine.js'
@@ -66,6 +83,7 @@ import detectWPParsely from './detector/WPParsely/WPParsely.js'
 
 const detectors = [
     detectAbyss,
+    detectAdobeFonts,
     detectAkamaiNetStorage,
     detectApache,
     detectAPISIX,
@@ -73,6 +91,7 @@ const detectors = [
     detectAWSELB,
     detectAWSLambda,
     detectAWSS3Server,
+    detectAxeptio,
     detectAzure,
     detectBaiduWAF,
     detectBaseHTTP,
@@ -86,10 +105,14 @@ const detectors = [
     detectCloudinary,
     detectDigitalproserver,
     detectDrupal,
+    detectFacebookSDK,
     detectFastly,
+    detectFoxyCart,
     detectEngintron,
+    detectGoogleAds,
     detectGoogleAnalytics,
     detectGoogleComputeEngine,
+    detectGoogleFonts,
     detectGoogleReCAPTCHA,
     detectGoogleTagManager,
     detectGunicorn,
@@ -100,9 +123,11 @@ const detectors = [
     detectHostinger,
     detectHostingerHPanel,
     detectJetty,
+    detectJoomla,
     detectJQuery,
     detectLighttpd,
     detectLiteSpeed,
+    detectMatomo,
     detectMerlinCDN,
     detectMicrosoftIIS,
     detectNamecheapNginx,
@@ -114,15 +139,24 @@ const detectors = [
     detectParsely,
     detectPHP,
     detectPlesk,
+    detectPrismic,
+    detectProtecht,
     detectReact,
     detectResin,
     detectRuby,
+    detectSentry,
     detectServiceNowADC,
+    detectSpektrix,
+    detectStripe,
+    detectSwiper,
+    detectTaboola,
     detectTornado,
+    detectTrustpilot,
     detectTwistedWeb,
     detectVercel,
     detectVirtuosoUniversalServer,
     detectWebflow,
+    detectWebpack,
     detectWEBrick,
     detectWordPress,
     detectWPEngine,

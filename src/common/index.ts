@@ -27,6 +27,15 @@ export const getRootHeaders = (har: HAR): NameValue[] | null => {
     return res
 }
 
+export const rootBodyContains = (har: HAR, value: string): boolean => {
+    let res: boolean = false
+    const rootBody = getRootBody(har)
+    if (rootBody.indexOf(value) !== -1) {
+        return true
+    }
+    return res
+}
+
 export const rootHeaderEquals = (har: HAR, header: string, value: string): boolean => {
     let res: boolean = false
     const rootHeaders = getRootHeaders(har)
@@ -87,6 +96,16 @@ export const anyResourceUrlContains = (har: HAR, value: string): boolean => {
     let res: boolean = false
     for (let i = 0; i < har.log.entries.length; i++) {
         if (har.log.entries[i].request.url.toLowerCase().indexOf(value.toLowerCase()) !== -1) {
+            return true
+        }
+    }
+    return res
+}
+
+export const anyResourceUrlRegex = (har: HAR, value: RegExp): boolean => {
+    let res: boolean = false
+    for (let i = 0; i < har.log.entries.length; i++) {
+        if (value.exec(har.log.entries[i].request.url.toLowerCase())) {
             return true
         }
     }

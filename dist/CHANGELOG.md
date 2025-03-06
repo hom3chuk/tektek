@@ -3,6 +3,32 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.10] - 2025-03-06
+
+### Added
+- Added Adobe Fonts
+- Added Axeptio
+- Added Facebook SDK
+- Added FoxyCart
+- Added Google Ads
+- Added Google Fonts
+- Added Joomla!
+- Added Matomo
+- Added Prismic
+- Added Protecht
+- Added Sentry.io
+- Added Spektrix
+- Added Stripe
+- Added Swiper JS
+- Added Taboola
+- Added Trustpilot
+- Added Webpack
+
+### Updated
+- Updated AWS CloudFront
+- Updated AWS S3
+- Updated Cloudinary
+
 ## [1.0.9] - 2025-02-27
 
 ### Added
