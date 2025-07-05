@@ -83,8 +83,8 @@ export const anyJavascriptResourceContentContains = (har: HAR, value: string, se
             continue
         }
         if (
-            (searchLimit && har.log.entries[i].response.content.text.substring(0, searchLimit).indexOf(value) !== -1)
-            || (!searchLimit && har.log.entries[i].response.content.text.indexOf(value) !== -1)
+            (searchLimit && har.log.entries[i].response.content?.text?.substring(0, searchLimit).indexOf(value) !== -1)
+            || (!searchLimit && har.log.entries[i].response.content?.text?.indexOf(value) !== -1)
         ) {
             return true
         }
