@@ -22,6 +22,7 @@ import detectCloudflare from './detector/cloudflare/cloudflare.js'
 import detectCloudflareServer from './detector/cloudflareServer/cloudflareServer.js'
 import detectCloudinary from './detector/cloudinary/cloudinary.js'
 import detectConstantContact from './detector/constantContact/constantContact.js'
+import detectDatadog from './detector/datadog/datadog.js'
 import detectDigitalproserver from './detector/digitalproserver/digitalproserver.js'
 import detectDrupal from './detector/drupal/drupal.js'
 import detectEngintron from './detector/engintron/engingtron.js'
@@ -76,12 +77,14 @@ import detectSentry from './detector/sentry/sentry.js'
 import detectServiceNowADC from './detector/serviceNowADC/serviceNowADC.js'
 import detectShopify from './detector/shopify/shopify.js'
 import detectSpektrix from './detector/spektrix/spektrix.js'
+import detectSplunk from './detector/splunk/splunk.js'
 import detectStripe from './detector/stripe/stripe.js'
 import detectSwiper from './detector/swiperjs/swiperjs.js'
 import detectTaboola from './detector/taboola/taboola.js'
 import detectTornado from './detector/tornado/tornado.js'
 import detectTrustpilot from './detector/trustpilot/trustpilot.js'
 import detectTwistedWeb from './detector/twistedWeb/twistedWeb.js'
+import detectUnpkg from './detector/unpkg/unpkg.js'
 import detectUsercentricsCookiebot from './detector/usercentricsCookiebot/usercentricsCookiebot.js'
 import detectVercel from './detector/vercel/vercel.js'
 import detectVirtuosoUniversalServer from './detector/virtuosoUniversalServer/virtuosoUniversalServer.js'
@@ -118,6 +121,7 @@ const detectors = [
     detectCloudflareServer,
     detectCloudinary,
     detectConstantContact,
+    detectDatadog,
     detectDigitalproserver,
     detectDrupal,
     detectFacebookSDK,
@@ -170,12 +174,14 @@ const detectors = [
     detectSentry,
     detectServiceNowADC,
     detectSpektrix,
+    detectSplunk,
     detectStripe,
     detectSwiper,
     detectTaboola,
     detectTornado,
     detectTrustpilot,
     detectTwistedWeb,
+    detectUnpkg,
     detectUsercentricsCookiebot,
     detectVercel,
     detectVirtuosoUniversalServer,
