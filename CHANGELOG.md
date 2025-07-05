@@ -3,6 +3,11 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.13] - 2025-07-05
+
+### Updated
+- yarn tooling
+
 ## [1.0.12] - 2025-07-05
 
 ### Added

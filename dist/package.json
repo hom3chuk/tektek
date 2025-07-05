@@ -1,13 +1,13 @@
 {
     "name": "@hom3chuk/tektek",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "description": "A library for detecting technologies used within HTTP Archive (HAR)",
     "main": "lib/es5/index.js",
     "module": "/lib/es6/index.js",
     "sideEffects": false,
     "repository": {
         "type": "git",
-        "url": "https://github.com/hom3chuk/tektek.git"
+        "url": "git+https://github.com/hom3chuk/tektek.git"
     },
     "files": [
         "CHANGELOG.md",
@@ -24,11 +24,11 @@
         "profiling",
         "web",
         "fingerprinting"
-      ],
-      "author": "Eugene Chekan <hom3chuk@gmail.com>",
-      "license": "MIT",
-      "bugs": {
+    ],
+    "author": "Eugene Chekan <hom3chuk@gmail.com>",
+    "license": "MIT",
+    "bugs": {
         "url": "https://github.com/hom3chuk/tektek/issues"
-      },
-      "homepage": "https://github.com/hom3chuk/tektek#readme"        
+    },
+    "homepage": "https://github.com/hom3chuk/tektek#readme"
 }

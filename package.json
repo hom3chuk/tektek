@@ -4,7 +4,8 @@
   "description": "A library for detecting technologies used within HTTP Archive (HAR)",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "rm -rf dist/lib && tsc && tsc --build tsconfig.es5.json && cp CHANGELOG.md dist/"
+    "compile": "rm -rf dist/lib && tsc && tsc --build tsconfig.es5.json && cp CHANGELOG.md README.md dist/",
+    "publish": "cd dist && npm publish --access=public"
   },
   "repository": {
     "type": "git",
