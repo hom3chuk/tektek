@@ -81,6 +81,7 @@ import detectSplunk from './detector/splunk/splunk.js'
 import detectStripe from './detector/stripe/stripe.js'
 import detectSwiper from './detector/swiperjs/swiperjs.js'
 import detectTaboola from './detector/taboola/taboola.js'
+import detectTailwindCss from './detector/tailwindcss/tailwindcss.js'
 import detectTornado from './detector/tornado/tornado.js'
 import detectTrustpilot from './detector/trustpilot/trustpilot.js'
 import detectTwistedWeb from './detector/twistedWeb/twistedWeb.js'
@@ -178,6 +179,7 @@ const detectors = [
     detectStripe,
     detectSwiper,
     detectTaboola,
+    detectTailwindCss,
     detectTornado,
     detectTrustpilot,
     detectTwistedWeb,

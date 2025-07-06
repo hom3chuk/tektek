@@ -76,6 +76,23 @@ export const anyResourceHeaderContains = (har: HAR, header: string, value: strin
     return res
 }
 
+export const anyCssResourceContentContains = (har: HAR, value: string, searchLimit: number | undefined = undefined): boolean => {
+    let res: boolean = false
+    for (let i = 0; i < har.log.entries.length; i++) {
+        if (har.log.entries[i].response.content.mimeType.toLowerCase() !== 'text/css') {
+            continue
+        }
+        if (
+            har.log.entries[i].response.content.text &&
+            ((searchLimit && har.log.entries[i].response.content.text.substring(0, searchLimit).indexOf(value) !== -1)
+            || (!searchLimit && har.log.entries[i].response.content.text.indexOf(value) !== -1))
+        ) {
+            return true
+        }
+    }
+    return res
+}
+
 export const anyJavascriptResourceContentContains = (har: HAR, value: string, searchLimit: number | undefined = undefined): boolean => {
     let res: boolean = false
     for (let i = 0; i < har.log.entries.length; i++) {
